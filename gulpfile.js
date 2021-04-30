@@ -25,7 +25,13 @@ const samplePath = 'sample';
 const packagePaths = getDirs(source);
 const packages = {
     common: createProject('packages/common/tsconfig.json'),
-    boot: createProject('packages/common/tsconfig.json'),
+    boot: createProject('packages/boot/tsconfig.json'),
+    config: createProject('packages/config/tsconfig.json'),
+    consul: createProject('packages/consul/tsconfig.json'),
+    'consul-kv': createProject('packages/consul-kv/tsconfig.json'),
+    'consul-registry': createProject('packages/consul-registry/tsconfig.json'),
+    logger: createProject('packages/logger/tsconfig.json'),
+    service: createProject('packages/service/tsconfig.json'),
 };
 
 function copyMisc() {

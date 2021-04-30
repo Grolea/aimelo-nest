@@ -1,6 +1,6 @@
 {
-  "watch": ["src", "packages", "modules", "config"],
+  "watch": ["sample", "packages"],
   "ext": "ts,yml",
   "ignore": ["src/**/*.spec.ts"],
-  "exec": "ts-node -r tsconfig-paths/register"
+  "exec": "TS_NODE_PROJECT='./sample/test/tsconfig.json' ts-node -r tsconfig-paths/register ./sample/test/main.ts"
 }

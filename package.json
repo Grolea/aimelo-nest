@@ -6,6 +6,8 @@
         "packages/*"
     ],
     "scripts": {
+        "lint": "eslint --ext ts .",
+        "lint:fix": "eslint --ext ts . --fix",
         "build": "gulp build --dist dist/@aimelo",
         "postbuild": "gulp move",
         "build:prod": "gulp build",
@@ -23,6 +25,9 @@
         "reflect-metadata": "^0.1.13"
     },
     "devDependencies": {
+        "@nestjs/platform-express": "^7.6.15",
+        "@nestjs/schedule": "^0.4.3",
+        "@types/consul": "^0.23.34",
         "@types/gulp": "^4.0.8",
         "@types/lodash": "^4.14.168",
         "@types/node": "^15.0.1",
@@ -30,6 +35,7 @@
         "@typescript-eslint/parser": "^4.22.0",
         "class-transformer": "^0.4.0",
         "class-validator": "^0.13.1",
+        "consul": "^0.40.0",
         "delete-empty": "^3.0.0",
         "eslint": "^7.25.0",
         "eslint-config-prettier": "^8.3.0",
@@ -39,6 +45,7 @@
         "gulp-typescript": "^6.0.0-alpha.1",
         "lerna": "^4.0.0",
         "prettier": "^2.2.1",
+        "tsconfig-paths": "^3.9.0",
         "typescript": "^4.2.4"
     }
 }

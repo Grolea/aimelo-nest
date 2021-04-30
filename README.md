@@ -7,6 +7,13 @@
 <a href="https://www.npmjs.com/~aimelo-io" target="_blank"><img src="https://img.shields.io/npm/v/@aimelo/common.svg" alt="NPM Version"/></a>
 </p>
 
+## Developer Run
+
+```shell
+yarn
+nodemon
+```
+
 ## Components
 
 #### [Common](packages/common)

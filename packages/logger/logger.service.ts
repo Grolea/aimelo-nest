@@ -27,7 +27,7 @@ export class LoggerService implements Logger, LoggerTransport {
     }
     error(error: Error | string, context?: Record<string, unknown>): void {
         const message = error instanceof Error ? error.message : error;
-        error = error instanceof Error ? error : undefined;
-        return this.output({ message, label: this.lable, error, context, level: LogLevel.ERROR });
+        const logError = error instanceof Error ? error : undefined;
+        return this.output({ message, label: this.lable, error: logError, context, level: LogLevel.ERROR });
     }
 }
