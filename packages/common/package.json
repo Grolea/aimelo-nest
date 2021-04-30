@@ -3,14 +3,14 @@
   "version": "1.0.16",
   "description": "Common module and utility building blocks for badass NestJS applications",
   "author": "Aimelo <account@aimelo.com>",
-  "homepage": "https://github.com/aimelo-io/aimelo-nestjs#readme",
+  "homepage": "https://github.com/grolea/aimelo-nest#readme",
   "license": "MIT",
   "keywords": [
     "NestJS"
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/aimelo-io/aimelo-nestjs"
+    "url": "git+https://github.com/grolea/aimelo-nest"
   },
   "scripts": {
     "build": "tsc --build tsconfig.build.json",

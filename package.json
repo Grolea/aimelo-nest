@@ -15,7 +15,7 @@
     },
     "version": "0.0.0",
     "main": "index.js",
-    "repository": "git@github.com:aimelo-io/aimelo-nestjs.git",
+    "repository": "git@github.com:grolea/aimelo-nest.git",
     "author": "aimelo <aimelo@gmail.com>",
     "dependencies": {
         "@nestjs/common": "^7.6.15",
