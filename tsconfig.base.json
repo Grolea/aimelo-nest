@@ -1,0 +1,31 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "declaration": true,
+    "declarationMap": true,
+    "noImplicitAny": false,
+    "removeComments": false,
+    "strict": true,
+    "strictNullChecks": true,
+    "noLib": false,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "target": "es2017",
+    "sourceMap": true,
+    "skipLibCheck": true,
+    "lib": [
+      "es7",
+      "ES2019",
+      "ESNext"
+    ],
+    "paths": {
+      "@aimelo/*": [
+        "../*"
+      ]
+    }
+  },
+  "exclude": [
+    "./node_modules",
+    "./**/*.spec.ts"
+  ]
+}

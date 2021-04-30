@@ -1,0 +1,26 @@
+{
+  "name": "@aimelo/boot",
+  "version": "1.0.2",
+  "description": "boot module and utility building blocks for badass NestJS applications",
+  "author": "Aimelo <account@aimelo.com>",
+  "homepage": "https://github.com/aimelo-io/aimelo-nestjs#readme",
+  "license": "MIT",
+  "keywords": [
+    "NestJS"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aimelo-io/aimelo-nestjs"
+  },
+  "scripts": {
+    "build": "tsc --build tsconfig.build.json",
+    "build:watch": "tsc --build tsconfig.build.json --watch",
+    "test": "jest"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "node-watch": "^0.7.1"
+  }
+}

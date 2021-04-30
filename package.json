@@ -1,0 +1,49 @@
+{
+    "name": "@aimelo/common",
+    "private": true,
+    "license": "MIT",
+    "workspaces": [
+        "packages/*"
+    ],
+    "scripts": {
+        "build": "gulp build --dist dist/@aimelo",
+        "postbuild": "gulp move",
+        "build:prod": "gulp build",
+        "build:samples": "gulp install:samples && yarn run build && gulp build:samples && gulp test:samples && gulp test:e2e:samples",
+        "clean": "gulp clean:bundle",
+        "prerelease": "gulp copy-misc && gulp build --dist dist/@aimelo",
+        "publish": "yarn run prerelease && yarn run build:prod && lerna publish --force-publish --exact -m \"@Grolea publish %s release\"",
+        "publish:beta": "yarn run prerelease && yarn run build:prod && lerna publish --npm-tag=beta -m \"@Grolea publish %s release\"",
+        "publish:next": "yarn run prerelease && yarn run build:prod && lerna publish --npm-tag=next --skip-git -m \"@Grolea publish %s release\"",
+        "publish:rc": "yarn run prerelease && yarn run build:prod && lerna publish --npm-tag=rc -m \"@Grolea publish %s release\"",
+        "publish:test": "yarn run prerelease && yarn run build:prod && lerna publish --force-publish --npm-tag=test --skip-git -m \"@Grolea publish %s release\""
+    },
+    "version": "0.0.0",
+    "main": "index.js",
+    "repository": "git@github.com:aimelo-io/aimelo-nestjs.git",
+    "author": "aimelo <aimelo@gmail.com>",
+    "dependencies": {
+        "@nestjs/common": "^7.6.15",
+        "@nestjs/core": "^7.6.15",
+        "reflect-metadata": "^0.1.13"
+    },
+    "devDependencies": {
+        "@types/gulp": "^4.0.8",
+        "@types/lodash": "^4.14.168",
+        "@types/node": "^15.0.1",
+        "@typescript-eslint/eslint-plugin": "^4.22.0",
+        "@typescript-eslint/parser": "^4.22.0",
+        "class-transformer": "^0.4.0",
+        "class-validator": "^0.13.1",
+        "delete-empty": "^3.0.0",
+        "eslint": "^7.25.0",
+        "eslint-config-prettier": "^8.3.0",
+        "eslint-plugin-prettier": "^3.4.0",
+        "gulp": "^4.0.2",
+        "gulp-clean": "^0.4.0",
+        "gulp-typescript": "^6.0.0-alpha.1",
+        "lerna": "^4.0.0",
+        "prettier": "^2.2.1",
+        "typescript": "^4.2.4"
+    }
+}
