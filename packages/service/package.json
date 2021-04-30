@@ -1,6 +1,6 @@
 {
   "name": "@aimelo/service",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "service module and utility building blocks for badass NestJS applications",
   "author": "Aimelo <account@aimelo.com>",
   "homepage": "https://github.com/aimelo-io/aimelo-nestjs#readme",
