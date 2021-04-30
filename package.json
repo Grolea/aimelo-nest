@@ -13,10 +13,10 @@
         "clean": "gulp clean:bundle",
         "prerelease": "gulp copy-misc && gulp build --dist dist/@aimelo",
         "publish": "yarn run prerelease && yarn run build:prod && lerna publish --force-publish --exact -m \"@Grolea publish %s release\"",
-        "publish:beta": "yarn run prerelease && yarn run build:prod && lerna publish --npm-tag=beta -m \"@Grolea publish %s release\"",
-        "publish:next": "yarn run prerelease && yarn run build:prod && lerna publish --npm-tag=next --skip-git -m \"@Grolea publish %s release\"",
-        "publish:rc": "yarn run prerelease && yarn run build:prod && lerna publish --npm-tag=rc -m \"@Grolea publish %s release\"",
-        "publish:test": "yarn run prerelease && yarn run build:prod && lerna publish --force-publish --npm-tag=test --skip-git -m \"@Grolea publish %s release\""
+        "publish:beta": "yarn run prerelease && yarn run build:prod && lerna publish --dist-tag=beta -m \"@Grolea publish %s release\"",
+        "publish:next": "yarn run prerelease && yarn run build:prod && lerna publish --dist-tag=next --skip-git -m \"@Grolea publish %s release\"",
+        "publish:rc": "yarn run prerelease && yarn run build:prod && lerna publish --dist-tag=rc -m \"@Grolea publish %s release\"",
+        "publish:test": "yarn run prerelease && yarn run build:prod && lerna publish --force-publish --dist-tag=test --skip-git -m \"@Grolea publish %s release\""
     },
     "version": "0.0.0",
     "main": "index.js",
