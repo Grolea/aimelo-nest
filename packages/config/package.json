@@ -1,6 +1,6 @@
 {
   "name": "@aimelo/config",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "config module and utility building blocks for badass NestJS applications",
   "author": "Aimelo <account@aimelo.com>",
   "homepage": "https://github.com/aimelo-io/aimelo-nestjs#readme",
