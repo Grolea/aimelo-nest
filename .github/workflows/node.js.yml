@@ -25,6 +25,5 @@ jobs:
       uses: actions/setup-node@v2
       with:
         node-version: ${{ matrix.node-version }}
-    - run: npm i yarn -g
-    - run: npm i lerna -g
+    - run: npm i yarn gulp lerna -g
     - run: yarn run publish:beta
