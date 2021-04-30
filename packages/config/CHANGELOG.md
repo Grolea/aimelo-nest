@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.13](https://github.com/aimelo-io/aimelo-nestjs/compare/@aimelo/config@1.0.12...@aimelo/config@1.0.13) (2021-04-30)
+
+**Note:** Version bump only for package @aimelo/config
+
+
+
+
+
 ## [1.0.12](https://github.com/aimelo-io/aimelo-nestjs/compare/@aimelo/config@1.0.11...@aimelo/config@1.0.12) (2021-04-30)
 
 **Note:** Version bump only for package @aimelo/config
