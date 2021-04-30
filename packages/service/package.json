@@ -1,6 +1,6 @@
 {
   "name": "@aimelo/service",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "description": "service module and utility building blocks for badass NestJS applications",
   "author": "Aimelo <account@aimelo.com>",
   "homepage": "https://github.com/aimelo-io/aimelo-nestjs#readme",
@@ -26,5 +26,5 @@
   "devDependencies": {
     "@types/cli-color": "^2.0.0"
   },
-  "gitHead": "fe600dac8372f716f135cdd822d902f6ba3b49bf"
+  "gitHead": "1ef5b19a4742403f519351c5a78355209ce3e22e"
 }
