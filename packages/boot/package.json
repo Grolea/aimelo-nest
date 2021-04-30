@@ -1,6 +1,6 @@
 {
   "name": "@aimelo/boot",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "boot module and utility building blocks for badass NestJS applications",
   "author": "Aimelo <account@aimelo.com>",
   "homepage": "https://github.com/aimelo-io/aimelo-nestjs#readme",
@@ -22,5 +22,6 @@
   },
   "dependencies": {
     "node-watch": "^0.7.1"
-  }
+  },
+  "gitHead": "6ba936ac1ee16d4fabf9637e8ea1230905ca71da"
 }

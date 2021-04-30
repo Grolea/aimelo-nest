@@ -1,6 +1,6 @@
 {
   "name": "@aimelo/common",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Common module and utility building blocks for badass NestJS applications",
   "author": "Aimelo <account@aimelo.com>",
   "homepage": "https://github.com/aimelo-io/aimelo-nestjs#readme",
@@ -23,5 +23,6 @@
   "dependencies": {
     "dotenv": "^8.2.0",
     "mobx": "^6.3.0"
-  }
+  },
+  "gitHead": "6ba936ac1ee16d4fabf9637e8ea1230905ca71da"
 }
