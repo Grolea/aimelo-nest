@@ -1,6 +1,6 @@
 {
   "name": "@aimelo/logger",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "logger module and utility building blocks for badass NestJS applications",
   "author": "Aimelo <account@aimelo.com>",
   "homepage": "https://github.com/aimelo-io/aimelo-nestjs#readme",
@@ -26,5 +26,5 @@
   "devDependencies": {
     "@types/cli-color": "^2.0.0"
   },
-  "gitHead": "6ba936ac1ee16d4fabf9637e8ea1230905ca71da"
+  "gitHead": "fe600dac8372f716f135cdd822d902f6ba3b49bf"
 }
