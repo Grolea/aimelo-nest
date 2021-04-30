@@ -25,12 +25,13 @@ jobs:
       uses: actions/setup-node@v2
       with:
         node-version: ${{ matrix.node-version }}
-        registry-url: 'https://registry.npmjs.org'
+      env:
+        NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+        GH_TOKEN: ${{ secrets.GH_TOKEN }}
     - run: npm i yarn gulp lerna -g
     - run: yarn
-    - run: yarn run publish:beta
-      env:
-        GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-        NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-        NPM_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-        GH_TOKEN: ${{ secrets.GH_TOKEN }}
+    - run: yarn run prerelease && yarn run build:prod
+    - name: Npm registry authentication
+      run: npm set //registry.npmjs.org/:_authToken ${{ secrets.NPM_TOKEN }}
+    - run: lerna publish --yes --force-publish --no-verify-access --exact -m "@Grolea publish %s release" -- --access public

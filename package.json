@@ -11,12 +11,7 @@
         "build:prod": "gulp build",
         "build:samples": "gulp install:samples && yarn run build && gulp build:samples && gulp test:samples && gulp test:e2e:samples",
         "clean": "gulp clean:bundle",
-        "prerelease": "gulp copy-misc && gulp build --dist dist/@aimelo",
-        "publish": "yarn run prerelease && yarn run build:prod && lerna publish --force-publish --exact -m \"@Grolea publish %s release\"",
-        "publish:beta": "yarn run prerelease && yarn run build:prod && lerna publish --dist-tag=beta -m \"@Grolea publish %s release\"",
-        "publish:next": "yarn run prerelease && yarn run build:prod && lerna publish --dist-tag=next --skip-git -m \"@Grolea publish %s release\"",
-        "publish:rc": "yarn run prerelease && yarn run build:prod && lerna publish --dist-tag=rc -m \"@Grolea publish %s release\"",
-        "publish:test": "yarn run prerelease && yarn run build:prod && lerna publish --force-publish --dist-tag=test --skip-git -m \"@Grolea publish %s release\""
+        "prerelease": "gulp copy-misc && gulp build --dist dist/@aimelo"
     },
     "version": "0.0.0",
     "main": "index.js",
