@@ -34,4 +34,6 @@ jobs:
     - run: yarn run prerelease && yarn run build:prod
     - name: Npm registry authentication
       run: npm set //registry.npmjs.org/:_authToken ${{ secrets.NPM_TOKEN }}
+    - run: git config --global user.email "grolea@aimelo.com"
+    - run: git config --global user.name "grolea"
     - run: lerna publish --yes --force-publish --no-verify-access --exact -m "@Grolea publish %s release" -- --access public
