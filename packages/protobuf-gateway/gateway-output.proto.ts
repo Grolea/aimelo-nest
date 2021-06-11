@@ -10,7 +10,7 @@ export class GatewayOutput extends Message<GatewayOutput> {
     @Field.d(3, 'bool')
     public isError?: boolean;
 
-    @Field.d(4, 'uint32')
+    @Field.d(4, 'int32')
     public code?: number;
 
     @Field.d(5, 'string')

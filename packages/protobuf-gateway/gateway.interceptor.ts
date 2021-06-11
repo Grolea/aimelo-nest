@@ -6,7 +6,7 @@ import { transOutput } from './trans-output.util';
 import { GatewayInput } from './gateway-input.proto';
 
 export class GatewayInterceptor implements NestInterceptor {
-    constructor(protected readonly input?: typeof Message, protected readonly output?: typeof Message) {}
+    constructor(protected readonly output?: typeof Message) {}
     intercept(context: ExecutionContext, next: CallHandler<any>): Observable<any> | Promise<Observable<any>> {
         const input = context.switchToWs().getData();
         return next.handle().pipe(map(data => this.transResponse(input, data)));

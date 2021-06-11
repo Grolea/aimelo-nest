@@ -19,6 +19,14 @@ export function transOutput(input: GatewayInput, output: TransOutputType): Uint8
             code: output.code,
             message: output.message,
         }).finish();
+    } else if (output instanceof Error) {
+        return GatewayOutput.encode({
+            rid: input.rid,
+            trace: input.trace,
+            isError: true,
+            code: 0,
+            message: output.message,
+        }).finish();
     } else if (output instanceof Uint8Array) {
         return output;
     }

@@ -1,5 +1,5 @@
-import { applyDecorators, PipeTransform, Type, UseFilters, UseInterceptors } from '@nestjs/common';
-import { MessageBody as NestMessageBody, SubscribeMessage as NestSubscribeMessage } from '@nestjs/websockets';
+import { applyDecorators, UseFilters, UseInterceptors } from '@nestjs/common';
+import { SubscribeMessage as NestSubscribeMessage } from '@nestjs/websockets';
 import { Message } from 'protobufjs/light';
 import { WebSocketGateway, GatewayMetadata } from '@nestjs/websockets';
 import { GatewayExceptionFilter } from './gateway-exception.filter';
@@ -18,10 +18,6 @@ export function Gateway<T extends Record<string, any> = GatewayMetadata>(
     );
 }
 
-export function SubscribeMessage<T = string>(
-    message: T,
-    input?: typeof Message,
-    output?: typeof Message,
-): MethodDecorator {
-    return applyDecorators(NestSubscribeMessage(message), UseInterceptors(new GatewayInterceptor(input, output)));
+export function SubscribeMessage<T = string>(message: T, output?: typeof Message): MethodDecorator {
+    return applyDecorators(NestSubscribeMessage(message), UseInterceptors(new GatewayInterceptor(output)));
 }
