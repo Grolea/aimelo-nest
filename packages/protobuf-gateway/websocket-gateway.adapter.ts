@@ -1,4 +1,4 @@
-import { INestApplicationContext, Logger } from '@nestjs/common';
+import { INestApplicationContext, Logger, MessageEvent } from '@nestjs/common';
 import { loadPackage } from '@nestjs/common/utils/load-package.util';
 import { AbstractWsAdapter } from '@nestjs/websockets';
 import { CLOSE_EVENT, CONNECTION_EVENT, ERROR_EVENT } from '@nestjs/websockets/constants';
@@ -22,7 +22,7 @@ export class WebSocketGatewayAdapter extends AbstractWsAdapter {
     public create(port: number, options?: any & { namespace?: string; server?: any }): any {
         const { server, ...wsOptions } = options;
         if (wsOptions?.namespace) {
-            const error = new Error('"WebSocketGatewayAdapter" does not support namespaces');
+            const error = new Error('Does not support namespaces');
             this.logger.error(error);
             throw error;
         }
@@ -38,9 +38,10 @@ export class WebSocketGatewayAdapter extends AbstractWsAdapter {
         transform: (data: any) => Observable<any>,
     ) {
         const close$ = fromEvent(client, CLOSE_EVENT).pipe(share(), first());
-        const source$ = fromEvent<Buffer>(client, 'message').pipe(
-            map(data => this.decodeMessage(data)),
-            mergeMap(data => this.bindMessageHandler(data, handlers, transform).pipe(filter(result => result))),
+        const source$ = fromEvent<{ data: Buffer }>(client, 'message').pipe(
+            mergeMap(buffer =>
+                this.bindMessageHandler(buffer.data, handlers, transform).pipe(filter(result => result)),
+            ),
             takeUntil(close$),
         );
         const onMessage = (response: any) => {
@@ -51,7 +52,7 @@ export class WebSocketGatewayAdapter extends AbstractWsAdapter {
             if (response instanceof Uint8Array) {
                 client.send(response);
             } else {
-                this.logger.error(`WebSocketGatewayAdapter not support Send type: ${typeof response}`);
+                this.logger.error(`Not support Send type: ${typeof response}`);
             }
         };
         source$.subscribe(onMessage);
@@ -65,6 +66,10 @@ export class WebSocketGatewayAdapter extends AbstractWsAdapter {
         try {
             const event = message.id ? message.id : message.cmd;
             const messageHandler = handlers.find(handler => handler.message === event);
+            if (!messageHandler) {
+                this.logger.debug(`Not handled: id=${message.id} cmd=${message.cmd}`);
+                return empty;
+            }
             const { callback } = messageHandler as MessageMappingProperties;
             return transform(callback(message));
         } catch {
