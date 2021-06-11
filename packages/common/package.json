@@ -1,6 +1,6 @@
 {
   "name": "@aimelo/common",
-  "version": "1.0.22",
+  "version": "1.0.23",
   "description": "Common module and utility building blocks for badass NestJS applications",
   "author": "Aimelo <account@aimelo.com>",
   "homepage": "https://github.com/grolea/aimelo-nest#readme",
