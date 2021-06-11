@@ -1,0 +1,26 @@
+{
+  "name": "@aimelo/protobuf-gateway",
+  "version": "1.0.16",
+  "description": "protobuf-gateway module and utility building blocks for badass NestJS applications",
+  "author": "Aimelo <account@aimelo.com>",
+  "homepage": "https://github.com/grolea/aimelo-nest#readme",
+  "license": "MIT",
+  "keywords": [
+    "NestJS"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/grolea/aimelo-nest"
+  },
+  "scripts": {
+    "build": "tsc --build tsconfig.build.json",
+    "build:watch": "tsc --build tsconfig.build.json --watch",
+    "test": "jest"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "gitHead": "8d7401dc633faee2383146da57344dfe67154fed"
+}

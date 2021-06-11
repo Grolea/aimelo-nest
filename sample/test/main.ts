@@ -19,7 +19,7 @@ import { ServiceDiscvoerModule, ServiceRegisterModule } from '@aimelo/service';
 process.env.NODE_ENV = 'production';
 
 @Configure()
-class AppliConfig {
+class AppConfig {
     @IsNumber() @Min(2000) @Expose() port: number = 63799;
     @IsString() env: string = '1111';
 }
@@ -29,7 +29,7 @@ class Service implements OnModuleInit {
     @Value('logger.level') private readonly level: string = 'DEBUG';
     host = 'sssss';
 
-    constructor(config: ConfigService, public readonly applicationConfig: AppliConfig) {
+    constructor(config: ConfigService, public readonly applicationConfig: AppConfig) {
         // config.asObservable().subscribe(v=> console.log('mmmmm', v))
         // console.log('after mmmm');
     }
@@ -86,7 +86,7 @@ class Service implements OnModuleInit {
         // }),
         // ConsulConfigModule.forRootAsync({ name: 'sss', useFactory: () => ({ keys: ['application'] }) }),
     ],
-    providers: [AppliConfig, Service],
+    providers: [AppConfig, Service],
     exports: [],
 })
 class AppModule {}

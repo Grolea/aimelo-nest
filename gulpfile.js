@@ -32,6 +32,7 @@ const packages = {
     'consul-registry': createProject('packages/consul-registry/tsconfig.json'),
     logger: createProject('packages/logger/tsconfig.json'),
     service: createProject('packages/service/tsconfig.json'),
+    'protobuf-gateway': createProject('packages/protobuf-gateway/tsconfig.json'),
 };
 
 function copyMisc() {
