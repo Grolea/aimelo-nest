@@ -1,6 +1,6 @@
 {
   "name": "@aimelo/consul",
-  "version": "1.0.19",
+  "version": "1.0.20",
   "description": "consul module and utility building blocks for badass NestJS applications",
   "author": "Aimelo <account@aimelo.com>",
   "homepage": "https://github.com/grolea/aimelo-nest#readme",
