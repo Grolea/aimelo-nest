@@ -4,5 +4,5 @@ export * from './gateway-input.proto';
 export * from './gateway-output.proto';
 export * from './gateway.decorator';
 export * from './gateway.interceptor';
-export * from './trans-output.util';
+export * from './transform-output.util';
 export * from './websocket-gateway.adapter';

@@ -2,7 +2,7 @@ import { Message, Field } from 'protobufjs/light';
 
 export class GatewayOutput extends Message<GatewayOutput> {
     @Field.d(1, 'uint32')
-    public rid?: number;
+    public id?: number;
 
     @Field.d(2, 'string')
     public trace?: string;

@@ -38,10 +38,8 @@ export class WebSocketGatewayAdapter extends AbstractWsAdapter {
         transform: (data: any) => Observable<any>,
     ) {
         const close$ = fromEvent(client, CLOSE_EVENT).pipe(share(), first());
-        const source$ = fromEvent<{ data: Buffer }>(client, 'message').pipe(
-            mergeMap(buffer =>
-                this.bindMessageHandler(buffer.data, handlers, transform).pipe(filter(result => result)),
-            ),
+        const source$ = fromEvent(client, 'message').pipe(
+            mergeMap(buffer => this.bindMessageHandler(buffer, handlers, transform).pipe(filter(result => result))),
             takeUntil(close$),
         );
         const onMessage = (response: any) => {
@@ -59,15 +57,16 @@ export class WebSocketGatewayAdapter extends AbstractWsAdapter {
     }
 
     public bindMessageHandler(
-        message: Partial<GatewayInput>,
+        buffer: any,
         handlers: MessageMappingProperties[],
         transform: (data: any) => Observable<any>,
     ): Observable<any> {
         try {
-            const event = message.id ? message.id : message.cmd;
+            const message = this.decodeMessage(buffer.data);
+            const event = message.cmd ? message.cmd : message.service;
             const messageHandler = handlers.find(handler => handler.message === event);
             if (!messageHandler) {
-                this.logger.debug(`Not handled: id=${message.id} cmd=${message.cmd}`);
+                this.logger.debug(`Not handled: cmd=${message.cmd} service=${message.service}`);
                 return empty;
             }
             const { callback } = messageHandler as MessageMappingProperties;

@@ -1,7 +1,7 @@
 import { LogicException } from '@aimelo/common';
 import { ArgumentsHost, Logger, WsExceptionFilter } from '@nestjs/common';
 import { READY_STATE } from './enums';
-import { transOutput } from './trans-output.util';
+import { transformOutput } from './transform-output.util';
 
 export class GatewayExceptionFilter implements WsExceptionFilter {
     protected readonly logger = new Logger('WsExceptionsHandler');
@@ -15,6 +15,6 @@ export class GatewayExceptionFilter implements WsExceptionFilter {
             this.logger.debug(`Client is status is Error: ${READY_STATE[client.readyState]}`);
             return;
         }
-        client.send(transOutput(input, exception));
+        client.send(transformOutput(input, exception));
     }
 }
