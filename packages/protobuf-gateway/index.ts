@@ -6,3 +6,4 @@ export * from './gateway.decorator';
 export * from './gateway.interceptor';
 export * from './transform-output.util';
 export * from './websocket-gateway.adapter';
+export * from './connection.service';

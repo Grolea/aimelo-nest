@@ -13,19 +13,19 @@ export class LoggerService implements Logger, LoggerTransport {
     output(log: LoggerOutput): void {
         return this.subject.next(log);
     }
-    verbose(message: string, context?: Record<string, unknown>): void {
+    verbose(message: string, context?: Record<string, any>): void {
         return this.output({ message, context, level: LogLevel.VERBOSE });
     }
-    debug(message: string, context?: Record<string, unknown>): void {
+    debug(message: string, context?: Record<string, any>): void {
         return this.output({ message, context, level: LogLevel.DEBUG });
     }
-    info(message: string, context?: Record<string, unknown>): void {
+    info(message: string, context?: Record<string, any>): void {
         return this.output({ message, context, level: LogLevel.INFO });
     }
-    warn(message: string, context?: Record<string, unknown>): void {
+    warn(message: string, context?: Record<string, any>): void {
         return this.output({ message, context, level: LogLevel.WARN });
     }
-    error(error: Error | string, context?: Record<string, unknown>): void {
+    error(error: Error | string, context?: Record<string, any>): void {
         const message = error instanceof Error ? error.message : error;
         const logError = error instanceof Error ? error : undefined;
         return this.output({ message, label: this.lable, error: logError, context, level: LogLevel.ERROR });

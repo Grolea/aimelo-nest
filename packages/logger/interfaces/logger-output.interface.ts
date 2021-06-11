@@ -9,5 +9,5 @@ export interface LoggerOutput {
     pid?: number;
     timestamp?: number;
     timestampDiff?: number;
-    context?: Record<string, unknown>;
+    context?: Record<string, any>;
 }
